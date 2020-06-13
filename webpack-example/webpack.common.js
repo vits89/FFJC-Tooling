@@ -5,10 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ title: 'webpack example' })
@@ -19,13 +15,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
       {
         test: /\.(gif|jpg|png|svg)$/,
         use: ['file-loader']
